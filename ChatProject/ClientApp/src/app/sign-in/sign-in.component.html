@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+  <div class="d-flex justify-content-center mt-5">
+
+    <form class="col-6 form-signin">
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block form-control" type="submit" [routerLink]="['/home']">Sign in</button>
+      <label class="d-flex justify-content-center mt-2">Are you new? <a [routerLink]="['/register-user']">sign up</a></label>
+      <p class="d-flex justify-content-center mt-5 mb-3 text-muted">© 2022-2023</p>
+    </form>
+  </div>
+
+</html>

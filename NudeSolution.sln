@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NudeSolution", "ChatProject\NudeSolution.csproj", "{86EBC89B-AEC9-414A-B0BD-2967390576C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86EBC89B-AEC9-414A-B0BD-2967390576C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86EBC89B-AEC9-414A-B0BD-2967390576C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86EBC89B-AEC9-414A-B0BD-2967390576C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86EBC89B-AEC9-414A-B0BD-2967390576C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7C27E42-E711-49A2-BB13-EFCC48EA8B7C}
+	EndGlobalSection
+EndGlobal
