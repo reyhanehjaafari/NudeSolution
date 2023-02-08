@@ -33,18 +33,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\src\app\data-model\user.ts" />
-    <None Remove="ClientApp\src\app\sign-in\sign-in.component.ts" />
-    <None Remove="ClientApp\src\app\register-user\register-user.component.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\src\app\data-model\user.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\sign-in\sign-in.component.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\register-user\register-user.component.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Models\" />
   </ItemGroup>
 

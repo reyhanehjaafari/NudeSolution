@@ -1,10 +1,67 @@
-<h1 id="tableLabel">Weather forecast</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
 
-<p *ngIf="!forecasts"><em>Loading...</em></p>
+        <div class="row" *ngFor="let category of catrgoryResult.categories">
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
+          <div class="row">
+            <div class="col-md-5"> {{category.name}}</div>
+            <div class="col-md-4"> {{category.totalValue | currency:'USD':'symbol':'1.0'}}</div>
+
+          </div>
+
+          <div class="row" style="margin-left: 5px;" *ngFor="let item of category.categoryItems">
+            <div class="col-md-5"> {{item.name}}</div>
+            <div class="col-md-5">{{item.value | currency:'USD':'symbol':'1.0'}}</div>
+            <div class="col-md-2">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="row mt-5 mb-3">
+            <div class="col-md-5">TOTAL</div>
+            <div class="col-md-4">{{catrgoryResult.categoriesTotalValue | currency:'USD':'symbol':'1.0'}}</div>
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col-md-4">
+            <input type="text" class="form-control" placeholder="Item Name"/>
+          </div>
+          <div class="col-md-2">
+            <input type="number" class="form-control"  />
+
+          </div>
+          <div class="col-md-4 ">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <button class="btn-primary btn form-control"> Add </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+</div>
+
+
+
+
+
+<!--<p *ngIf="!forecasts"><em>Loading...</em></p>-->
+<!--<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
   <thead>
     <tr>
       <th>Date</th>
@@ -21,4 +78,4 @@
       <td>{{ forecast.summary }}</td>
     </tr>
   </tbody>
-</table>
+</table>-->

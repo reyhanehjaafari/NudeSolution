@@ -1,5 +1,5 @@
-using NudeSolution.DAL;
 using Microsoft.EntityFrameworkCore;
+using NudeSolution.DataAccess;
 
 internal class Program
 {
@@ -7,8 +7,9 @@ internal class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        var config = builder.Configuration.GetConnectionString("DefaultConnection");
-        builder.Services.AddDbContext<NudeContext>(options => options.UseSqlServer(config));
+        var dbConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+        builder.Services.AddDbContext<NudeContext>(options => options.UseSqlServer(dbConnectionString));
 
         builder.Services.AddCors(options =>
         {
@@ -23,13 +24,13 @@ internal class Program
         builder.Services.AddControllersWithViews();
         builder.Services.AddSwaggerGen();
 
-
         var app = builder.Build();
 
-        // CreateDbIfNotExists(app);
-
-        app.UseSwagger();
-        app.UseSwaggerUI();
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI();
+        }
 
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
@@ -43,7 +44,6 @@ internal class Program
         app.UseRouting();
         app.UseCors("all");
 
-
         app.MapControllerRoute(
             name: "default",
             pattern: "{controller}/{action=Index}/{id?}");
@@ -51,23 +51,6 @@ internal class Program
         app.MapFallbackToFile("index.html"); ;
 
         app.Run();
-    }
-    private static void CreateDbIfNotExists(IHost host)
-    {
-        using (var scope = host.Services.CreateScope())
-        {
-            var services = scope.ServiceProvider;
-            try
-            {
-                var context = services.GetRequiredService<NudeContext>();
-                DbInitializer.Initialize(context);
-            }
-            catch (Exception ex)
-            {
-                var logger = services.GetRequiredService<ILogger<Program>>();
-                logger.LogError(ex, "An error occurred creating the DB.");
-            }
-        }
     }
 }
 

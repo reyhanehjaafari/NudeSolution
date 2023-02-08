@@ -1,23 +1,43 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-fetch-data',
   templateUrl: './fetch-data.component.html'
 })
-export class FetchDataComponent {
-  public forecasts: WeatherForecast[] = [];
+export class FetchDataComponent implements OnInit {
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<WeatherForecast[]>(baseUrl + 'weatherforecast').subscribe(result => {
-      this.forecasts = result;
+  public catrgoryResult: CatrgoryResult = new CatrgoryResult();
+
+  constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+
+  }
+  ngOnInit(): void {
+
+    this.http.get<CatrgoryResult>("https://localhost:7067/getAll").subscribe(result => {
+
+      this.catrgoryResult = result;
+
     }, error => console.error(error));
   }
 }
 
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
+interface CategoryItem {
+  categoryItemId: number,
+  name: string,
+  value: number,
+  categoryId: number,
+}
+
+interface Category {
+  categoryId: number,
+  name: string,
+  categoryItems: Array<CategoryItem>;
+  totalValue: number
+}
+class CatrgoryResult {
+
+  categories!: Array<Category>;
+  categoriesTotalValue!: number;
+
 }

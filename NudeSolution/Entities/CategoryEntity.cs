@@ -2,30 +2,9 @@
 {
     public class CategoryEntity
     {
-        private List<ItemEntity> _items;
-        private decimal _totalValue;
-        public int Id { get; set; }
+        public int CategoryId { get; set; }
         public string Name { get; set; }
-        public List<ItemEntity> Items
-        {
-            get => _items; set
-            {
-                _items = value;
-            }
-        }
-        public decimal TotalValue
-        {
-            get => _totalValue; set
-            {
-                if (_items != null && _items.Any())
-                {
-
-                    foreach (var item in _items)
-                    {
-                        _totalValue += item.Value;
-                    }
-                }
-            }
-        }
+        public ICollection<CategoryItemEntity> CategoryItems { get; set; }
+        public decimal? TotalValue => CategoryItems?.Where(x => x.CategoryId == CategoryId).Sum(x => x.Value);
     }
 }
