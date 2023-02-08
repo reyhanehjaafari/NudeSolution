@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/ProjectEvaluation/nudesolution.metadata.v5.2
+/.vs/ProjectEvaluation/nudesolution.projects.v5.2
+/.vs/NudeSolution/v17/.suo
+/.vs/NudeSolution/v17/.futdcache.v2
+/.vs/NudeSolution/FileContentIndex/ebda8b19-9620-4b74-a389-d4e8ddf3d358.vsidx
+/.vs/NudeSolution/FileContentIndex/d27ae0ef-f4e7-4886-b623-0ce308696090.vsidx
+/.vs/NudeSolution/FileContentIndex/70531c3c-c98a-4fa1-bef5-45889557151f.vsidx
+/.vs/NudeSolution/FileContentIndex/3dde97ee-6e1c-461d-aa5f-37e5bd717fcd.vsidx
+/.vs/NudeSolution/DesignTimeBuild/.dtbcache.v2
