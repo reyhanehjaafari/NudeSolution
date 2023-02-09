@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using NudeSolution.DataAccess;
+using NudeSolution.Services;
 
 internal class Program
 {
@@ -14,6 +15,9 @@ internal class Program
         var dbConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
         builder.Services.AddDbContext<NudeContext>(options => options.UseSqlServer(dbConnectionString));
+        
+        builder.Services.AddTransient<ICategoryService, CategoryService>();
+        builder.Services.AddTransient<ICategoryItemService, CategoryItemService>();
 
         builder.Services.AddCors(options =>
         {

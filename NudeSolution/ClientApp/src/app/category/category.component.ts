@@ -6,11 +6,11 @@ import { CatrgoryResult } from '../model/category-result';
 import { environment } from '../../environments/environment';
 
 @Component({
-  selector: 'app-fetch-data',
-  templateUrl: './fetch-data.component.html',
-  styleUrls: ['./fetch-data.component.css']
+  selector: 'app-category',
+  templateUrl: './category.component.html',
+  styleUrls: ['./category.component.css']
 })
-export class FetchDataComponent implements OnInit {
+export class CategoryComponent implements OnInit {
 
   public catrgoryResult: CatrgoryResult = new CatrgoryResult();
   faTrash = faTrash;

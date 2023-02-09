@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { CategoryComponent } from './category/category.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FetchDataComponent,
+    CategoryComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -18,8 +18,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FontAwesomeModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: FetchDataComponent, pathMatch: 'full' },
-      { path: 'fetch-data', component: FetchDataComponent }
+      { path: '', component: CategoryComponent, pathMatch: 'full' },
+      { path: 'category', component: CategoryComponent }
     ])
   ],
   providers: [],

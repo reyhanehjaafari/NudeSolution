@@ -11,7 +11,7 @@ namespace NudeSolution.DataAccess
         {
         }
 
-        public DbSet<CategoryItemEntity> CategoryItems { get; set; }
+        public virtual DbSet<CategoryItemEntity> CategoryItems { get; set; }
         public DbSet<CategoryEntity> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
