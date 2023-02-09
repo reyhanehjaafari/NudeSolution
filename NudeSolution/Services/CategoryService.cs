@@ -15,6 +15,12 @@ namespace NudeSolution.Services
             _logger = logger;
         }
 
+        public void Add(CategoryEntity category)
+        {
+            _dbContext.Add(category);
+            _dbContext.SaveChanges();
+            _logger.Log(LogLevel.Information, "Category has been added successfully!");
+        }
 
         public (List<CategoryEntity>, decimal?) GetAll()
         {
@@ -28,7 +34,7 @@ namespace NudeSolution.Services
 
             var result = (categories, categories.Sum(x => x.TotalValue));
 
-            _logger.Log(LogLevel.Information, $"Category fetched successfully. {JsonSerializer.Serialize(result)}");
+            _logger.Log(LogLevel.Information, "Category fetched successfully");
 
             return result;
         }

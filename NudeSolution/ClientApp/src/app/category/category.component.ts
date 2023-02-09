@@ -32,11 +32,9 @@ export class CategoryComponent implements OnInit {
 
 
   remove(categoryItem: CategoryItem) {
-
     this.http.delete<CatrgoryResult>(`${environment.BASE_URL}/deleteCategoryItem?categoryItemId=${categoryItem.categoryItemId}`).subscribe(result => {
       this.getAll();
     }, error => console.error(error));
-
   }
 
   getAll() {
@@ -47,11 +45,10 @@ export class CategoryComponent implements OnInit {
 
 
   add() {
-
     this.http.post(`${environment.BASE_URL}/CreateCategoryItem`, this.selectedCategoryItem).subscribe(result => {
       this.selectedCategoryItem = new CategoryItem();
       this.getAll();
     }, error => console.error(error));
-
   }
+
 }
