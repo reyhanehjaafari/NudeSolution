@@ -11,3 +11,7 @@
 /.vs/NudeSolution/FileContentIndex/70531c3c-c98a-4fa1-bef5-45889557151f.vsidx
 /.vs/NudeSolution/FileContentIndex/3dde97ee-6e1c-461d-aa5f-37e5bd717fcd.vsidx
 /.vs/NudeSolution/DesignTimeBuild/.dtbcache.v2
+
+/NudeSolution.Tests/obj
+/NudeSolution.Tests/bin/Debug/net6.0
+/.vs/NudeSolution/FileContentIndex
