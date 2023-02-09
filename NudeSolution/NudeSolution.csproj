@@ -33,7 +33,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <None Remove="ClientApp\src\app\model\category-item.ts" />
+    <None Remove="ClientApp\src\app\model\category-result.ts" />
+    <None Remove="ClientApp\src\app\model\category.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\model\category-item.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\model\category.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\model\category-result.ts" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

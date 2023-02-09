@@ -6,6 +6,10 @@ internal class Program
     private static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+        
+        builder.Logging.ClearProviders();
+        builder.Logging.AddConsole();
+
 
         var dbConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 

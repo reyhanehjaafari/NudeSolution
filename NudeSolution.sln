@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NudeSolution", "NudeSolution\NudeSolution.csproj", "{34644A95-EF20-4E11-A2AB-8111E403371B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NudeSolution.Tests", "NudeSolution.Tests\NudeSolution.Tests.csproj", "{FB14F2D9-1D64-45B7-A0A7-243A89664B30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{34644A95-EF20-4E11-A2AB-8111E403371B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34644A95-EF20-4E11-A2AB-8111E403371B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34644A95-EF20-4E11-A2AB-8111E403371B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB14F2D9-1D64-45B7-A0A7-243A89664B30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB14F2D9-1D64-45B7-A0A7-243A89664B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB14F2D9-1D64-45B7-A0A7-243A89664B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB14F2D9-1D64-45B7-A0A7-243A89664B30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
